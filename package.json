@@ -1,0 +1,24 @@
+{
+  "name": "rubikbot",
+  "version": "1.0.0",
+  "description": "Verification bot for UNSW Rubik Society's Discord server based on [lo-fi society's bot, seba](https://github.com/mtsev/seba).",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtsev/rubikbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtsev/rubikbot/issues"
+  },
+  "homepage": "https://github.com/rubikbot/seba#readme"
+}
