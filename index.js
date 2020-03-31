@@ -18,10 +18,11 @@ client.on('guildMemberAdd', member => {
             "if you are a UNSW student or to the address provided in the form otherwise." +
             "\n\nThe verification code should be in this format: `!verify xxxxxx`" +
             "\nDM this command + code here to verify." +
-            "\n\nIf you have any issues or questions, please message @exec in the #verification chat.";   
+            "\n\nIf you have any issues or questions, please message an " +
+            `@exec in the #verification channel.`; 
+
     member.send(message);
 });
-
 
 // Bot command for verification
 client.on('message', message => {
@@ -34,8 +35,8 @@ client.on('message', message => {
 
         var botReply;
 
-        // Ignore messages outside of DM or verification channel
-        if (message.guild != null && message.channel.id != channels.verify) return;
+        // Ignore messages outside of DM
+        if (message.guild != null) return;
 
         // Invalid code entered
         if (args.length == 0 || !args[0].match(/[\d]{6}/)) {
