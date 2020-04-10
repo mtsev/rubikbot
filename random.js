@@ -8,8 +8,8 @@ module.exports = {
         // Output 32-bit hash to provide the seed for mulberry32
         var rand = mulberry32(seed());
         
-        // Generate 6-digit random number
-        return parseInt(rand() * 10**n);
+        // Generate 6-digit pseudo-random number
+        return rand().toString().slice(2, n+2);
     }
 };
 
