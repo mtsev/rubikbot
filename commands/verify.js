@@ -21,6 +21,12 @@ async function execute(guild, message, args) {
     let d = new Date();
     console.log(`[${d.toLocaleString()}] ${message.author.tag} entered '${args}' (${code})`);
 
+    // If the member isn't in the server, this should never happen
+    if (!member) {
+        console.error(`'verify' called by ${message.author.tag} who isn't in the server`);
+        return;
+    }
+
     // Invalid code entered
     if (args.length === 0 || !args[0].match(/[\d]{6}/)) {
         botReply = "Please enter a valid verification code. " +
