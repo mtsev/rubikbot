@@ -1,0 +1,17 @@
+{
+    "prefix": "",
+    "token": "",
+    "server": {
+        "id": "",
+        "name": "",
+        "form": ""
+    },
+    "channels": {
+        "verify": ""
+    },
+    "roles": {
+        "verified": "",
+        "exec": ""
+    },
+    "seed": ""
+}

@@ -21,7 +21,7 @@ async function execute(guild, message, args) {
     "\n\nThe verification code should be in this format: `!verify xxxxxx`" +
     "\nDM this command + code here to verify." +
     "\n\nIf you have any issues or questions, please message an " +
-    `@exec in the #verification channel.`; 
+    `@exec in the #${message.channel.name} channel.`; 
 
     // Send direct message to member
     try {
