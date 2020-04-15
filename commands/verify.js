@@ -1,4 +1,4 @@
-const { server, roles, seed } = require('../config.json');
+const { server, channels, roles, seed } = require('../config.json');
 const { getPad } = require('../random.js');
 
 module.exports = {
@@ -50,10 +50,14 @@ async function execute(guild, message, args) {
 
     // Incorrect code entered
     else {
+
+        // Get name of verification channel
+        const verification = guild.channels.get(channels.verify).name;
+
         botReply = "**Sorry, your verification code was incorrect. Please try the following:**\n" +
                 "1. Check that the code was entered correctly and try again.\n" +
                 "2. Check that your Discord tag is the same as what you entered into the form and try again.\n" +
-                `3. Message an @exec in the #verification channel if it's still not working.`;
+                `3. Message an @exec in the #${verification} channel if it's still not working.`;
     }
 
     // Send message to member, shouldn't throw an error because we're replying to a DM
