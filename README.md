@@ -4,14 +4,21 @@ Verification bot for UNSW Rubik Society's Discord server based on [lo-fi society
 * Sends DM with verification instructions when prompted with `!verifyme`
 * Verifies members using a code emailed by [this google script](https://github.com/mtsev/seba-form-script) and updates their roles
 
+**Note that this bot does not send emails.** This [google script](https://github.com/mtsev/seba-form-script) added to your verification form will send emails. RubikBot verifies using codes sent out by this script.
+
 ## Installation
 Download the source code from the [latest release](https://github.com/mtsev/rubikbot/releases/latest).
 
-You can run this bot in [Docker](https://docs.docker.com/get-docker/) on a Linux server with `./start`.
+You can run this bot in [Docker](https://docs.docker.com/get-docker/) on a Linux server with the `start` script.
+```sh
+$ ./start
+```
 
-Alternatively, you can run it manually. This bot requires Node.js to run. Dependencies can be installed with `npm install`. Then you can start the bot with `npm start`.
-
-**Note that this bot does not send emails.** This [google script](https://github.com/mtsev/seba-form-script) added to your verification form will send emails. RubikBot verifies using codes sent out by this script.
+Alternatively, you can manually install dependencies and run it. This bot requires Node.js to run.
+```sh
+$ npm install
+$ npm start
+```
 
 ## Configuration
 Copy `config-sample.json` to `config.json` and set the following values:

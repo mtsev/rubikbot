@@ -17,10 +17,6 @@ async function execute(guild, message, args) {
     const member = guild.member(message.author);
     const code = getPad(message.author.tag.toLowerCase() + seed, 6);
 
-    // Log command
-    let d = new Date();
-    console.log(`[${d.toLocaleString()}] ${message.author.tag} entered '${args}' (${code})`);
-
     // If the member isn't in the server, this should never happen
     if (!member) {
         console.error(`'verify' called by ${message.author.tag} who isn't in the server`);
@@ -63,4 +59,3 @@ async function execute(guild, message, args) {
     // Send message to member, shouldn't throw an error because we're replying to a DM
     await message.author.send(botReply).catch(console.error);
 }
-

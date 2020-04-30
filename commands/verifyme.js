@@ -28,24 +28,19 @@ async function execute(guild, message, args) {
         await message.author.send(welcome);
     } catch(error) {
 
-        let botReply;
-        let d = new Date();
-
         // Cannot direct message member
         if (error.code === 50007) {
-            botReply = `${message.author}, I couldn't send you a message. Please go to 'Privacy Settings' ` +
+            console.error(`Couldn't DM user ${message.author.tag}`);
+
+            let botReply = `${message.author}, I couldn't send you a message. Please go to 'Privacy Settings' ` +
                 "for this server and allow direct messages from server members.";
-            console.error(`[${d.toLocaleString()}] Couldn't DM user ${message.author.tag}`);
+            await guild.channels.get(channels.verify).send(botReply).catch(console.error);
         }
 
         // Some other error has occurred
         else {
-            botReply = `${message.author}, sorry, an error has occurred. ` +
-                "Please try again or ping an @exec if the problem doesn't go away.";
-            console.error(`[${d.toLocaleString()}]`, error);
+            console.error(error);
+            throw error;
         }
-
-        // Send error message into verification channel
-        await guild.channels.get(channels.verify).send(botReply).catch(console.error);
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "rubikbot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Verification bot for UNSW Rubik Society's Discord server",
   "main": "index.js",
   "dependencies": {
