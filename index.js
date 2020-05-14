@@ -40,7 +40,7 @@ client.on('ready', () => {
     guild = client.guilds.get(server.id);
 
     // Set status message
-    client.user.setActivity('!verifyme', { type: 'LISTENING' });
+    client.user.setActivity(`${prefix}verifyme`, { type: 'LISTENING' });
 });
 
 /* Bot commands */
